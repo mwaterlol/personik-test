@@ -6,9 +6,6 @@ class Helper {
     };
 
     static getFirstLetterOfNextCity = (usedCities: string[]) => {
-        if (!usedCities.length) {
-            return '';
-        }
         const lastLetter = usedCities[usedCities.length - 1].slice(-1).toLowerCase();
         if (lastLetter === 'ъ' || lastLetter === 'ь') {
             return usedCities[usedCities.length - 1].slice(-2, -1).toLowerCase();
@@ -60,9 +57,9 @@ class Helper {
             return result;
         }
 
-        const nextCityFirstLetter = this.getFirstLetterOfNextCity(usedCities);
-        if (nextCityFirstLetter !== cityValue[0].toLowerCase() && usedCities.length) {
-            result.message = 'Город должен начинаться с той же буквы, что и заканчивается предыдущий';
+        const lastCity = usedCities[usedCities.length - 1];
+        if (lastCity && lastCity[lastCity.length - 1].toLowerCase() !== cityValue[0].toLowerCase()) {
+            result.message = 'Город должен начинаться с той же буквы, что и предыдущий';
             result.verdict = false;
             return result;
         }
