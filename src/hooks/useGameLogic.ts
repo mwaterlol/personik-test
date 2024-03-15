@@ -9,7 +9,7 @@ const useGameLogic = (
 ) => {
     const [timeLeft, setTimeLeft] = useState(120);
     const [turn, setTurn] = useState(PlayersEnum.User);
-    const [usedCities, setUsedCities] = useState<string[]>([]);
+    const [usedCities, setUsedCities] = useState<string[]>();
 
     const addCity = (value: string) => {
         setUsedCities((prevUsedCities) => [...prevUsedCities, value]);

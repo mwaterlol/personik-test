@@ -26,4 +26,4 @@ const GameProcessHeader = ({ turn, timeLeft, setTimeLeft }: GameProcessHeaderPro
     );
 };
 
-export default GameProcessHeader
+export default GameProcessHeader;
