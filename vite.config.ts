@@ -1,16 +1,18 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import path from 'path';
+import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve("src"),
-      "@widgets": path.resolve("src/widgets"),
-      "@features": path.resolve("src/features"),
-      "@entities": path.resolve("src/entities"),
+    plugins: [react(), svgr()],
+    resolve: {
+        alias: {
+            src: path.resolve('src/'),
+            '@': path.resolve('src'),
+            '@components': path.resolve('src/components'),
+            '@app': path.resolve('src/app'),
+            '@types': path.resolve('src/types'),
+        },
     },
-  },
 });
