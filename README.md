@@ -1,6 +1,6 @@
 # Тестовое задание для frontend-разработчика
 
-Installation
+## Installation
 ```bash
 git clone https://github.com/mwaterlol/personik-test.git
 cd personik-test
