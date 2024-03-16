@@ -10,10 +10,10 @@ type InProgressFrame = {
     finishGame: () => void;
 };
 const InProgressFrame = ({ changeGameResult, finishGame }: InProgressFrame) => {
-    const { timeLeft, setTimeLeft, turn, usedCities, addCity } = useGameLogic(changeGameResult, finishGame);
+    const { timeLeft, turn, usedCities, addCity } = useGameLogic(changeGameResult, finishGame);
     return (
         <BaseFrame>
-            <Header turn={turn} timeLeft={timeLeft} setTimeLeft={setTimeLeft} />
+            <Header turn={turn} timeLeft={timeLeft} />
             <MessagesFrame cities={usedCities} />
             <CityForm isDisabled={turn === PlayersEnum.Bot} addCity={addCity} usedCities={usedCities} />
         </BaseFrame>

@@ -52,7 +52,7 @@ const useGameLogic = (
         };
         getNextCity();
     }, [usedCities]);
-    return { timeLeft, setTimeLeft, turn, usedCities, addCity };
+    return { timeLeft, turn, usedCities, addCity };
 };
 
 export default useGameLogic;
